@@ -50,7 +50,7 @@ class TrafficLightController:
             self._buzzer.beep(tone=50,duration=3000)
             self._pedestrianCrossingRequested = False
         else:    
-            self._buzzer.beep(tone=200,duration=2000)
+            self._buzzer.beep(tone=50,duration=2000)
         self._redLight.off()
     
     def requestPedestrianCrossing(self):
