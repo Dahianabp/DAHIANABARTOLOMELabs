@@ -27,9 +27,9 @@ class TrafficLightController:
         self._redLight.off()
         self._greenLight.on()
         if self._pedestrianCrossingRequested == True:
-            time.sleep(3)
+            time.sleep(2)
         else:
-            time.sleep(10)
+            time.sleep(3)
         self._greenLight.off()
 
 
@@ -37,7 +37,7 @@ class TrafficLightController:
         print("TrafficLightController: caution")
         self._greenLight.off()
         self._yellowLight.on()
-        time.sleep(3)
+        time.sleep(1)
         self._yellowLight.off()
 
     def stop(self):
@@ -47,10 +47,10 @@ class TrafficLightController:
         self._yellowLight.off()
         self._redLight.on()
         if self._pedestrianCrossingRequested == True:
-            self._buzzer.beep(tone=50,duration=15000)
+            self._buzzer.beep(tone=50,duration=3000)
             self._pedestrianCrossingRequested = False
         else:    
-            self._buzzer.beep(tone=200,duration=7000)
+            self._buzzer.beep(tone=200,duration=2000)
         self._redLight.off()
     
     def requestPedestrianCrossing(self):
