@@ -28,8 +28,8 @@ class trafficLightController:
         # Handlers can now be set to None - we will add them to the model and it will
         # do the handling
 
-        self._button1 = Button(17, "PedestrianCrossing1", buttonhandler=None)
-        self._button2 = Button(10, "PedestrianCrossing2", buttonhandler=None)
+        self._button1 = Button(17, "CrossingRequestButton1", buttonhandler=None)
+        self._button2 = Button(10, "CrossingRequestButton2", buttonhandler=None)
         self._timer = SoftwareTimer(None)
         self._carSensor = MotionSensor(28)
         self._trafficLight1 = lightStack(9, 5, 0) #represent a stack of lights found in a traffic light
@@ -134,6 +134,7 @@ class trafficLightController:
         elif state == 2:
             print("TrafficLightController: Entering State 2")
             self._timer.start(5)
+
 
         elif state == 3:
             print("TrafficLightController: Entering State 3")
